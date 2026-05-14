@@ -1,1 +1,0 @@
-# QASR_PERFUMES
