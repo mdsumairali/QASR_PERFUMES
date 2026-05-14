@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<title>QASR Perfumes — Product</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+<!-- ANNOUNCE BAR -->
+<div class="announce-bar">
+  <div class="announce-track">
+    <span>✦ Free Delivery Above ₹999</span><span>✦ 7 Day Easy Returns</span>
+    <span>✦ 100% Alcohol-Free Attars</span><span>✦ Cash on Delivery Available</span>
+    <span>✦ Premium Gift Packaging</span><span>✦ Free Delivery Above ₹999</span>
+    <span>✦ 7 Day Easy Returns</span><span>✦ 100% Alcohol-Free Attars</span>
+    <span>✦ Cash on Delivery Available</span><span>✦ Premium Gift Packaging</span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="images/logo-full.png" alt="QASR Perfumes"></a>
+    <ul class="nav-links">
+      <li><a href="index.html#shop">Shop All</a></li>
+      <li class="has-drop">
+        <a href="#">Collections ▾</a>
+        <div class="nav-drop">
+          <a href="index.html#shop" onclick="sessionStorage.setItem('qf','gift')">Gift Packs</a>
+          <a href="index.html#shop" onclick="sessionStorage.setItem('qf','pocket')">Pocket Perfume</a>
+          <a href="index.html#shop" onclick="sessionStorage.setItem('qf','edp')">Eau de Parfum</a>
+          <a href="index.html#shop" onclick="sessionStorage.setItem('qf','edt')">Eau de Toilette</a>
+          <a href="index.html#shop" onclick="sessionStorage.setItem('qf','attars')">Attars</a>
+          <a href="index.html#shop" onclick="sessionStorage.setItem('qf','trial')">Trial Packs</a>
+        </div>
+      </li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-cart-btn" onclick="openCart()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="nav-cart-count" id="cartCount" style="display:none">0</span>
+      </button>
+      <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html#shop">Shop All</a>
+  <a href="index.html#reviews">Reviews</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="bc-inner">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <a href="index.html#shop" id="bcCat">Shop</a>
+    <span>›</span>
+    <span id="bcName">Loading…</span>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL -->
+<section class="pd-section" id="pdSection">
+  <div class="pd-wrap">
+
+    <!-- LEFT: IMAGE GALLERY -->
+    <div class="pd-gallery">
+      <!-- Thumbnails -->
+      <div class="pd-thumbs" id="pdThumbs"></div>
+      <!-- Main image -->
+      <div class="pd-main-img" id="pdMainImg">
+        <img id="pdMainImgEl" src="" alt="">
+        <div class="pd-img-nav">
+          <button class="pd-arr" id="pdPrev">&#8249;</button>
+          <button class="pd-arr" id="pdNext">&#8250;</button>
+        </div>
+        <div class="pd-img-dots" id="pdDots"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: PRODUCT INFO -->
+    <div class="pd-info">
+      <!-- Badges -->
+      <div class="pd-badges" id="pdBadges"></div>
+
+      <!-- Family + Name -->
+      <p class="pd-family" id="pdFamily"></p>
+      <h1 class="pd-name" id="pdName">Loading…</h1>
+      <p class="pd-tagline" id="pdTagline"></p>
+
+      <!-- Rating placeholder -->
+      <div class="pd-rating">
+        <span class="pd-stars">★★★★★</span>
+        <span class="pd-rating-count">4.9 · 200+ reviews</span>
+      </div>
+
+      <!-- Price -->
+      <div class="pd-price-block">
+        <span class="pd-price" id="pdPrice"></span>
+        <span class="pd-orig" id="pdOrig"></span>
+        <span class="pd-off" id="pdOff"></span>
+      </div>
+
+      <!-- Description -->
+      <p class="pd-desc" id="pdDesc"></p>
+
+      <!-- Fragrance Notes -->
+      <div class="pd-notes" id="pdNotes" style="display:none">
+        <div class="pd-notes-head">Fragrance Notes</div>
+        <div class="pd-notes-grid">
+          <div class="pd-note-col">
+            <div class="pd-note-label">Top Notes</div>
+            <div class="pd-note-val" id="pdTop"></div>
+          </div>
+          <div class="pd-note-col">
+            <div class="pd-note-label">Heart Notes</div>
+            <div class="pd-note-val" id="pdHeart"></div>
+          </div>
+          <div class="pd-note-col">
+            <div class="pd-note-label">Base Notes</div>
+            <div class="pd-note-val" id="pdBase"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Size selector -->
+      <div class="pd-sizes-wrap" id="pdSizesWrap" style="display:none">
+        <div class="pd-section-label">Select Size</div>
+        <div class="pd-sizes" id="pdSizes"></div>
+      </div>
+
+      <!-- Gift 4-picker -->
+      <div class="pd-gift-wrap" id="pdGiftWrap" style="display:none">
+        <div class="pd-section-label">Choose Your 4 Fragrances</div>
+        <div id="pdGiftPicks"></div>
+        <div class="pd-gift-summary" id="pdGiftSummary"></div>
+      </div>
+
+      <!-- Scent selector -->
+      <div class="pd-scent-wrap" id="pdScentWrap" style="display:none">
+        <div class="pd-section-label">Choose Fragrance</div>
+        <select class="pd-scent-sel" id="pdScentSel"></select>
+      </div>
+
+      <!-- Add to cart -->
+      <div class="pd-actions">
+        <button class="pd-add-btn" id="pdAddBtn">+ Add to Cart</button>
+        <a class="pd-wa-btn" id="pdWaBtn" href="#" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Buy via WhatsApp
+        </a>
+      </div>
+
+      <!-- Features -->
+      <div class="pd-features">
+        <div class="pd-feat"><span>🚚</span><span>Free delivery on orders above ₹999</span></div>
+        <div class="pd-feat"><span>↩️</span><span>7-day easy returns</span></div>
+        <div class="pd-feat"><span>✅</span><span>100% authentic, alcohol-free</span></div>
+        <div class="pd-feat"><span>💳</span><span>Cash on delivery available</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW TO CHANGE IMAGES GUIDE -->
+  <div class="img-guide">
+    <div class="img-guide-inner">
+      <div class="img-guide-title">📸 How to Replace Product Images</div>
+      <div class="img-guide-text">
+        To update this product's images, open <code>js/products.js</code> and find this product's entry. Update the <code>images</code> array with your image paths. Each product supports 3 images: front view, side view, and lifestyle shot.
+      </div>
+      <div class="img-guide-code" id="imgGuideCode"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="related-section">
+  <div class="related-inner">
+    <h2 class="related-title">You May Also Like</h2>
+    <div class="related-grid" id="relatedGrid"></div>
+  </div>
+</section>
+
+<!-- CART OVERLAY + SIDEBAR (same as index) -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-head"><h3>Your Cart</h3><button onclick="closeCart()" class="cart-close">✕</button></div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-foot">
+    <div class="cart-total-row"><span>Total</span><span id="cartTotal">₹0</span></div>
+    <button class="cart-order-btn" onclick="openOrderModal()">Place Order via WhatsApp</button>
+  </div>
+</div>
+
+<!-- ORDER MODAL -->
+<div class="modal-overlay" id="orderModal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-drag"></div>
+    <h3 class="modal-title">Complete Your Order</h3>
+    <p class="modal-sub">We'll confirm your order via WhatsApp</p>
+    <div class="form-group"><label>Full Name *</label><input type="text" id="custName" placeholder="Your full name"></div>
+    <div class="form-row">
+      <div class="form-group"><label>Mobile *</label><input type="tel" id="custMobile" placeholder="10-digit number" maxlength="10"></div>
+      <div class="form-group"><label>Email</label><input type="email" id="custEmail" placeholder="Optional"></div>
+    </div>
+    <div class="form-group"><label>Delivery Address *</label><input type="text" id="custAddress" placeholder="House, Street, City"></div>
+    <div class="form-group"><label>Pincode *</label><input type="text" id="custPincode" placeholder="6-digit pincode" maxlength="6"></div>
+    <button class="modal-submit" onclick="submitOrder()">Send Order on WhatsApp →</button>
+  </div>
+</div>
+
+<!-- CART BAR -->
+<div class="cart-bar" id="cartBar">
+  <div class="cart-bar-left">
+    <span class="cart-bar-count" id="barCount">0 items</span>
+    <span class="cart-bar-total" id="barTotal">₹0</span>
+  </div>
+  <button class="cart-bar-btn" onclick="openCart()">View Cart & Checkout →</button>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="#" id="waFloat" target="_blank" aria-label="WhatsApp">
+  <div class="wa-circle">
+    <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+  <span class="wa-tip">Chat with us on WhatsApp</span>
+</a>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

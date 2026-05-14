@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<title>QASR Perfumes & Attars — Luxury Arabic Fragrances</title>
+<meta name="description" content="Shop QASR Perfumes — pure Arabic attars, luxury EDPs, gift packs and trial sizes. Free delivery above ₹999. 7-day returns. Cash on delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══ ANNOUNCEMENT BAR ══════════════════════════════════ -->
+<div class="announce-bar">
+  <div class="announce-track">
+    <span>✦ Free Delivery Above ₹999</span>
+    <span>✦ 7 Day Easy Returns</span>
+    <span>✦ 100% Alcohol-Free Attars</span>
+    <span>✦ Cash on Delivery Available</span>
+    <span>✦ Premium Gift Packaging</span>
+    <span>✦ Free Delivery Above ₹999</span>
+    <span>✦ 7 Day Easy Returns</span>
+    <span>✦ 100% Alcohol-Free Attars</span>
+    <span>✦ Cash on Delivery Available</span>
+    <span>✦ Premium Gift Packaging</span>
+  </div>
+</div>
+
+<!-- ══ NAVBAR ════════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a class="nav-logo" href="#"><img src="images/logo-full.png" alt="QASR Perfumes"></a>
+
+    <!-- Center links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" onclick="filterAndScroll('all')">Shop All</a></li>
+      <li class="has-drop">
+        <a href="#">Collections ▾</a>
+        <div class="nav-drop">
+          <a href="#" onclick="filterAndScroll('gift')">Gift Packs</a>
+          <a href="#" onclick="filterAndScroll('pocket')">Pocket Perfume</a>
+          <a href="#" onclick="filterAndScroll('edp')">Eau de Parfum</a>
+          <a href="#" onclick="filterAndScroll('edt')">Eau de Toilette</a>
+          <a href="#" onclick="filterAndScroll('attars')">Attars</a>
+          <a href="#" onclick="filterAndScroll('trial')">Trial Packs</a>
+        </div>
+      </li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Right actions -->
+    <div class="nav-actions">
+      <div class="nav-search-wrap">
+        <input type="text" class="nav-search" id="searchInput" placeholder="Search perfumes…" oninput="handleSearch(this.value)">
+        <span class="nav-search-icon">🔍</span>
+      </div>
+      <button class="nav-cart-btn" onclick="openCart()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="nav-cart-count" id="cartCount" style="display:none">0</span>
+      </button>
+      <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="filterAndScroll('all');closeMobile()">Shop All</a>
+  <a href="#" onclick="filterAndScroll('gift');closeMobile()">Gift Packs</a>
+  <a href="#" onclick="filterAndScroll('pocket');closeMobile()">Pocket Perfume</a>
+  <a href="#" onclick="filterAndScroll('edp');closeMobile()">Eau de Parfum</a>
+  <a href="#" onclick="filterAndScroll('edt');closeMobile()">Eau de Toilette</a>
+  <a href="#" onclick="filterAndScroll('attars');closeMobile()">Attars</a>
+  <a href="#" onclick="filterAndScroll('trial');closeMobile()">Trial Packs</a>
+  <a href="#reviews" onclick="closeMobile()">Reviews</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- ══ HERO BANNER ════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="hero-tag">Est. in the Spirit of Arabia</p>
+    <h1 class="hero-title">Where Scent<br>Meets <em>Royalty</em></h1>
+    <p class="hero-sub">Handcrafted Arabic fragrances rooted in centuries of tradition. Pure attars, luxury EDPs and curated gift collections.</p>
+    <div class="hero-btns">
+      <button class="hero-cta" onclick="filterAndScroll('all')">Shop the Collection</button>
+      <button class="hero-cta hero-cta-ghost" onclick="filterAndScroll('gift')">View Gift Packs</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-num">100%</span><span class="hero-stat-lbl">Alcohol-Free</span></div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat"><span class="hero-stat-num">7 Day</span><span class="hero-stat-lbl">Easy Returns</span></div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat"><span class="hero-stat-num">COD</span><span class="hero-stat-lbl">Available</span></div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat"><span class="hero-stat-num">Free</span><span class="hero-stat-lbl">Ship ₹999+</span></div>
+  </div>
+</section>
+
+<!-- ══ FEATURES ══════════════════════════════════════════ -->
+<section class="features" id="about">
+  <div class="container">
+    <div class="feat-grid">
+      <div class="feat-item"><div class="feat-ico">🌿</div><strong>100% Alcohol-Free</strong><p>Pure attars and alcohol-free perfumes, suitable for all skin types.</p></div>
+      <div class="feat-item"><div class="feat-ico">✨</div><strong>Authentic Ingredients</strong><p>Premium oud, rose, musk and saffron from trusted Gulf and Indian origins.</p></div>
+      <div class="feat-item"><div class="feat-ico">📦</div><strong>Premium Packaging</strong><p>Every order arrives in elegant gift-ready packaging.</p></div>
+      <div class="feat-item"><div class="feat-ico">🚚</div><strong>Pan-India Delivery</strong><p>Free shipping on orders above ₹999. COD on select pincodes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SHOP ══════════════════════════════════════════════ -->
+<section class="shop-section" id="shop">
+  <div class="shop-wrap">
+
+    <!-- LEFT SIDEBAR FILTERS -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <span class="sidebar-title">Filters</span>
+        <button class="sidebar-clear" onclick="clearAllFilters()">Clear all</button>
+      </div>
+
+      <!-- Category -->
+      <div class="filter-group">
+        <div class="filter-group-head" onclick="toggleGroup(this)">Category <span>▾</span></div>
+        <div class="filter-group-body">
+          <label class="filter-check"><input type="checkbox" name="cat" value="gift" onchange="applyFilters()"><span>Gift Packs</span></label>
+          <label class="filter-check"><input type="checkbox" name="cat" value="pocket" onchange="applyFilters()"><span>Pocket Perfume</span></label>
+          <label class="filter-check"><input type="checkbox" name="cat" value="edp" onchange="applyFilters()"><span>Eau de Parfum</span></label>
+          <label class="filter-check"><input type="checkbox" name="cat" value="edt" onchange="applyFilters()"><span>Eau de Toilette</span></label>
+          <label class="filter-check"><input type="checkbox" name="cat" value="attars" onchange="applyFilters()"><span>Attars</span></label>
+          <label class="filter-check"><input type="checkbox" name="cat" value="trial" onchange="applyFilters()"><span>Trial Packs</span></label>
+        </div>
+      </div>
+
+      <!-- Gender -->
+      <div class="filter-group">
+        <div class="filter-group-head" onclick="toggleGroup(this)">Gender <span>▾</span></div>
+        <div class="filter-group-body">
+          <label class="filter-check"><input type="checkbox" name="gender" value="Men" onchange="applyFilters()"><span>Men</span></label>
+          <label class="filter-check"><input type="checkbox" name="gender" value="Women" onchange="applyFilters()"><span>Women</span></label>
+          <label class="filter-check"><input type="checkbox" name="gender" value="Unisex" onchange="applyFilters()"><span>Unisex</span></label>
+        </div>
+      </div>
+
+      <!-- Fragrance Family -->
+      <div class="filter-group">
+        <div class="filter-group-head" onclick="toggleGroup(this)">Fragrance Family <span>▾</span></div>
+        <div class="filter-group-body">
+          <label class="filter-check"><input type="checkbox" name="family" value="Oud" onchange="applyFilters()"><span>Oud</span></label>
+          <label class="filter-check"><input type="checkbox" name="family" value="Floral" onchange="applyFilters()"><span>Floral</span></label>
+          <label class="filter-check"><input type="checkbox" name="family" value="Fresh" onchange="applyFilters()"><span>Fresh</span></label>
+          <label class="filter-check"><input type="checkbox" name="family" value="Aquatic" onchange="applyFilters()"><span>Aquatic</span></label>
+          <label class="filter-check"><input type="checkbox" name="family" value="Woody" onchange="applyFilters()"><span>Woody</span></label>
+          <label class="filter-check"><input type="checkbox" name="family" value="Oriental" onchange="applyFilters()"><span>Oriental</span></label>
+          <label class="filter-check"><input type="checkbox" name="family" value="Spicy" onchange="applyFilters()"><span>Spicy</span></label>
+          <label class="filter-check"><input type="checkbox" name="family" value="Musk" onchange="applyFilters()"><span>Musk</span></label>
+        </div>
+      </div>
+
+      <!-- Price -->
+      <div class="filter-group">
+        <div class="filter-group-head" onclick="toggleGroup(this)">Price <span>▾</span></div>
+        <div class="filter-group-body">
+          <div class="price-range">
+            <div class="price-inputs">
+              <span>₹</span><input type="number" id="priceMin" placeholder="0" onchange="applyFilters()">
+              <span>–</span>
+              <span>₹</span><input type="number" id="priceMax" placeholder="9999" onchange="applyFilters()">
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="shop-main">
+      <!-- Toolbar -->
+      <div class="shop-toolbar">
+        <div class="shop-toolbar-left">
+          <button class="mobile-filter-btn" onclick="toggleSidebar()">⚙ Filters</button>
+          <span class="product-count" id="productCount">Loading…</span>
+        </div>
+        <div class="shop-toolbar-right">
+          <!-- Category pills (horizontal scroll) -->
+          <div class="cat-pills" id="catPills">
+            <button class="cat-pill active" onclick="quickFilter('all',this)">All</button>
+            <button class="cat-pill" onclick="quickFilter('gift',this)">Gift Packs</button>
+            <button class="cat-pill" onclick="quickFilter('pocket',this)">Pocket</button>
+            <button class="cat-pill" onclick="quickFilter('edp',this)">EDP</button>
+            <button class="cat-pill" onclick="quickFilter('edt',this)">EDT</button>
+            <button class="cat-pill" onclick="quickFilter('attars',this)">Attars</button>
+            <button class="cat-pill" onclick="quickFilter('trial',this)">Trial</button>
+          </div>
+          <select class="sort-select" id="sortSelect" onchange="applyFilters()">
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A–Z</option>
+            <option value="name-desc">Name: Z–A</option>
+            <option value="discount">Best Discount</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid"></div>
+      <div class="no-results" id="noResults" style="display:none">
+        <p>No products match your filters.</p>
+        <button onclick="clearAllFilters()">Clear Filters</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ════════════════════════════════════════════ -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-head"><p class="sec-eye">What Our Customers Say</p><h2 class="sec-title">Customer <em>Love</em></h2></div>
+    <div class="reviews-grid" id="reviewsGrid"></div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════ -->
+<footer class="footer" id="contact">
+  <div class="footer-top">
+    <div class="footer-col footer-brand">
+      <img src="images/logo-full.png" alt="QASR" class="footer-logo">
+      <p class="footer-desc">Handcrafted Arabic fragrances rooted in the tradition of the Arabian Peninsula. Every drop tells a story.</p>
+      <div class="footer-social">
+        <a href="#" data-instagram class="soc-a" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" data-facebook class="soc-a" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" data-whatsapp class="soc-a" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="#" onclick="filterAndScroll('gift')">Gift Packs</a>
+      <a href="#" onclick="filterAndScroll('pocket')">Pocket Perfume</a>
+      <a href="#" onclick="filterAndScroll('edp')">Eau de Parfum</a>
+      <a href="#" onclick="filterAndScroll('edt')">Eau de Toilette</a>
+      <a href="#" onclick="filterAndScroll('attars')">Attars</a>
+      <a href="#" onclick="filterAndScroll('trial')">Trial Packs</a>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <a href="#about">About Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item"><span>📞</span><a href="#" data-phone class="footer-phone"></a></div>
+      <div class="footer-contact-item"><span>✉️</span><a href="#" data-email class="footer-email"></a></div>
+      <div class="footer-contact-item"><span>💬</span><a href="#" data-whatsapp>WhatsApp Us</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 QASR Perfumes & Attars. All rights reserved.</span>
+    <span>Made with ♥ in India</span>
+  </div>
+</footer>
+
+<!-- ══ FIXED CART BAR ════════════════════════════════════ -->
+<div class="cart-bar" id="cartBar">
+  <div class="cart-bar-left">
+    <span class="cart-bar-count" id="barCount">0 items</span>
+    <span class="cart-bar-total" id="barTotal">₹0</span>
+  </div>
+  <button class="cart-bar-btn" onclick="openCart()">View Cart & Checkout →</button>
+</div>
+
+<!-- ══ CART OVERLAY ══════════════════════════════════════ -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<!-- ══ CART SIDEBAR ══════════════════════════════════════ -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-head">
+    <h3>Your Cart</h3>
+    <button onclick="closeCart()" class="cart-close">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-foot">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+    <button class="cart-order-btn" onclick="openOrderModal()">Place Order via WhatsApp</button>
+  </div>
+</div>
+
+<!-- ══ ORDER MODAL ════════════════════════════════════════ -->
+<div class="modal-overlay" id="orderModal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-drag"></div>
+    <h3 class="modal-title">Complete Your Order</h3>
+    <p class="modal-sub">We'll confirm your order via WhatsApp</p>
+    <div class="form-group"><label>Full Name *</label><input type="text" id="custName" placeholder="Your full name"></div>
+    <div class="form-row">
+      <div class="form-group"><label>Mobile *</label><input type="tel" id="custMobile" placeholder="10-digit number" maxlength="10"></div>
+      <div class="form-group"><label>Email</label><input type="email" id="custEmail" placeholder="Optional"></div>
+    </div>
+    <div class="form-group"><label>Delivery Address *</label><input type="text" id="custAddress" placeholder="House, Street, City"></div>
+    <div class="form-group"><label>Pincode *</label><input type="text" id="custPincode" placeholder="6-digit pincode" maxlength="6"></div>
+    <button class="modal-submit" onclick="submitOrder()">Send Order on WhatsApp →</button>
+  </div>
+</div>
+
+<!-- ══ SALE POPUP ════════════════════════════════════════ -->
+<div class="sale-overlay" id="salePopup">
+  <div class="sale-box">
+    <button class="sale-x" onclick="closeSale()">✕</button>
+    <p class="sale-eye">✦ Limited Offer ✦</p>
+    <h2 class="sale-title" id="saleTitle"></h2>
+    <p class="sale-sub" id="saleSub"></p>
+    <div class="sale-code-wrap">
+      <span class="sale-code" id="saleCode"></span>
+      <button class="sale-copy" onclick="copyCode()">Copy</button>
+    </div>
+    <button class="sale-cta" id="saleBtn" onclick="closeSale()"></button>
+    <button class="sale-skip" onclick="closeSale()">No thanks, skip offer</button>
+  </div>
+</div>
+
+<!-- ══ WHATSAPP FLOAT ════════════════════════════════════ -->
+<a class="wa-float" href="#" data-whatsapp target="_blank" aria-label="WhatsApp">
+  <div class="wa-circle">
+    <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+  <span class="wa-tip">Chat with us on WhatsApp</span>
+</a>
+
+<!-- ══ TOAST ══════════════════════════════════════════════ -->
+<div class="toast" id="toast"></div>
+
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
